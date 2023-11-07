@@ -31,8 +31,8 @@ def line_subplotting(ax, df, xcolumn, ycolumn, moving_average_column, label, col
     ax.legend(loc='upper left')
 
 # Histogram visualization
-def hist_subplotting(ax, df, column, label, color, fontsize):
-    sns.histplot(data=df[column], color=color, ax=ax)
+def hist_subplotting(ax, df, column, label, color, fontsize, bins):
+    sns.histplot(data=df[column], color=color, ax=ax, bins=bins)
     ax.set_ylabel('Count', fontsize=fontsize)
     ax.set_xlabel(label, color='black', fontsize=fontsize)
     ax.set_ylim(bottom=0)
@@ -68,3 +68,8 @@ def reg_subplotting(ax, df, xcolumn, ycolumn, xlabel, ylabel, color, fontsize):
     sns.regplot(ax=ax, data=df, x=xcolumn, y=ycolumn, color=color, scatter_kws={'s': 50, 'alpha': 0.6})
     ax.set_xlabel(xlabel, fontsize=fontsize)
     ax.set_ylabel(ylabel, fontsize=fontsize)
+
+# Despine subplot
+def despine_subplot(ax):
+    sns.despine(bottom=False, left=True, top=True, right=True, trim=False, ax=ax)
+    ax.set_yticks([])

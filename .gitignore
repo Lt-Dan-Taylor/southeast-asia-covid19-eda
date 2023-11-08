@@ -1,7 +1,6 @@
-# Ignore Python cache files
+__pycache__/
 *.pyc
 
-# Ignore IPython Notebook checkpoint directories
 .ipynb_checkpoints/
 
 token.txt

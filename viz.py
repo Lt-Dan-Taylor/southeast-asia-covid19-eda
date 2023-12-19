@@ -6,7 +6,8 @@ import seaborn as sns
 import warnings
 
 warnings.filterwarnings('ignore')
-sns.set_style('ticks')
+
+sns.set(style='ticks')
 
 # Formatting to billion, million or thousand
 def numeric_formatter(x, pos):
